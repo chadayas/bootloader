@@ -1,3 +1,6 @@
+#ifndef GUARD_REG_H
+#define GUARD_REG_H
+
 #include <cstdint>
 
 // definitions of the used registers for bare metal access
@@ -25,3 +28,5 @@
 #define FLASH_CR   reinterpret_cast<volatile uint32_t *>(FLASH_BASE + 0x10)
 #define FLASH_ACR  reinterpret_cast<volatile uint32_t *>(FLASH_BASE + 0x00)
 #define FLASH_SR   reinterpret_cast<volatile uint32_t *>(FLASH_BASE + 0x0C)
+
+#endif // GUARD_REG_H

@@ -1,7 +1,8 @@
-#ifndef GUARD_REG_H
-#define GUARD_REG_H
+#ifndef GUARD_REGREG_H
+#define GUARD_REGREG_H
 
-#include <cstddef>
+#include <cstddef> // offsetof, used by the static_asserts below
+#include <cstdint> // uint32_t, used throughout
 
 namespace RCC {
 constexpr uint32_t BASE{0x40023800};
@@ -213,4 +214,4 @@ inline NVIC_ISER::Register *iser() {
 }
 inline SYSTICK::Register *systick() { return reinterpret_cast<SYSTICK::Register *>(SYSTICK::BASE); }
 
-#endif
+#endif // GUARD_REGREG_H

@@ -1,3 +1,6 @@
+#ifndef GUARD_CHECKS_H
+#define GUARD_CHECKS_H
+
 #include "regreg.h"
 
 // sequentially reading of status register
@@ -65,3 +68,5 @@ inline void hardware_reset() {
 }
 
 extern "C" void Usart2IQR_handler();
+
+#endif // GUARD_CHECKS_H
