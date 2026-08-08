@@ -74,7 +74,7 @@ Peripherals covered: `RCC`, `GPIOA`, `USART2`, `FLASH`, `AIRCR`.
 
 ## Vector Table
 
-The startup assembly uses `.org` to place only the handlers needed — no zero-padding for unused slots:
+The startup assembly uses `.org` to place only the handlers needed, no zero-padding for unused slots:
 
 ```asm
 .section .isr_vector, "a", %progbits
