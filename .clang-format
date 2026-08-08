@@ -1,0 +1,22 @@
+# Formatting rules for this bare-metal STM32 bootloader.
+# Every deviation from LLVM below is deliberate; reasons given inline.
+---
+Language: Cpp
+BasedOnStyle: LLVM
+
+# Matches the style already used throughout bootloader/ and inc/.
+# The repo currently mixes tabs and spaces mid-function; Never settles it.
+IndentWidth: 3
+UseTab: Never
+
+# 80 splits all 16 static_assert offset checks in inc/hdr/regreg.h across
+# two lines each. 100 keeps the hardware offset table on one line per entry.
+ColumnLimit: 100
+
+# checks.h, flash.h, reg.h and uart.h have no include guards, so include
+# order is load-bearing. Reordering them would break the build.
+SortIncludes: false
+
+# Keeps the register/offset tables in inc/hdr/ column-aligned and scannable.
+AlignConsecutiveMacros: Consecutive
+AlignConsecutiveAssignments: Consecutive
