@@ -16,6 +16,12 @@ STUB     = inc/stub.c
 STARTUP  = inc/startup.s
 LINK_SRC = inc/main.ld
 
+# Tracked C/C++ sources. usart2.cpp is gitignored scratch and stays out.
+FORMAT_SRC = $(SRC) $(FLASH_SRC) $(USART_SRC) $(STUB) \
+             inc/hdr/checks.h inc/hdr/flash.h inc/hdr/reg.h \
+             inc/hdr/regreg.h inc/hdr/uart.h \
+             call/port.cpp call/port.h call/termios_init.cpp
+
 all: main.bin
 
 main.o: $(SRC)
@@ -53,3 +59,11 @@ debug:
 
 clean:
 	rm -f *.o *.elf *.bin
+
+format:
+	clang-format -i $(FORMAT_SRC)
+
+check-format:
+	clang-format --dry-run -Werror $(FORMAT_SRC)
+
+.PHONY: format check-format

@@ -4,13 +4,13 @@
 #include <string.h>
 
 // Linux headers
-#include <fcntl.h> // Contains file controls like O_RDWR
-#include <errno.h> // Error integer and strerror() function
+#include <fcntl.h>   // Contains file controls like O_RDWR
+#include <errno.h>   // Error integer and strerror() function
 #include <termios.h> // Contains POSIX terminal control definitions
-#include <unistd.h> // write(), read(), close()
+#include <unistd.h>  // write(), read(), close()
 
-#include<cstdint>
+#include <cstdint>
 
 void port_init();
-void read_from_port(int port, unsigned char* _buf);
+void read_from_port(int port, unsigned char *_buf);
 void write_to_port(int port, uint8_t msg);
