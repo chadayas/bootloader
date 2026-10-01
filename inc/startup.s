@@ -8,7 +8,7 @@
 .word Reset_Handler
 .org 0x3C  /*replace the .repr with .org for placing our handlers where we need them*/
 .word SysTick_handler
-.org 0x98
+.org 0xD8
 .word Usart2IQR_handler
 
 .text

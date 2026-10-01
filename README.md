@@ -82,7 +82,7 @@ The startup assembly uses `.org` to place only the handlers needed, no zero-padd
 .word Reset_Handler
 .org 0x3C              // SysTick  (slot 15)
 .word SysTick_handler
-.org 0x98              // USART2   (slot 54, IRQ38)
+.org 0xD8              // USART2   (slot 54, IRQ38)
 .word Usart2IQR_handler
 ```
 
