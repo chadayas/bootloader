@@ -1,7 +1,10 @@
 test.bin
 test.elf
 *.bin
+*.elf
+*.o
 test
 opts.txt
 usart2.cpp
 TODO.txt
+fix.md
